@@ -8,7 +8,7 @@ def perform_operation(num1, num2, operation):
     operation (str): The operation to perform ('add', 'subtract', 'multiply', 'divide').
 
     Returns:
-    float: The result of the operation.
+    float or str: The result of the operation or an error message.
     """
     if operation == 'add':
         return num1 + num2
@@ -18,7 +18,7 @@ def perform_operation(num1, num2, operation):
         return num1 * num2
     elif operation == 'divide':
         if num2 == 0:
-            raise ValueError("Cannot divide by zero.")
+            return "Error: Division by zero"
         return num1 / num2
     else:
-        raise ValueError("Invalid operation. Choose from 'add', 'subtract', 'multiply', or 'divide'.")
+        return "Error: Invalid operation"
