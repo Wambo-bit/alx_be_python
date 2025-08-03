@@ -23,7 +23,7 @@ def main():
     elif command == "display":
         account.display_balance()
     else:
-        print("Invalid command.")
+        print(f"Current Balance: ${self.account_balance}")
 
 if __name__ == "__main__":
     main()
