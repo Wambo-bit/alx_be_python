@@ -1,23 +1,29 @@
-from bank_account import BankAccount
 import sys
+from bank_account import BankAccount
 
-def main():
-    account = BankAccount(100)
+account = BankAccount(100.0)
 
-    if len(sys.argv) > 1:
-        command = sys.argv[1]
+if len(sys.argv) > 1:
+    action = sys.argv[1]
 
-        if command.startswith("deposit:"):
-            amount = float(command.split(":")[1])
-            print(account.deposit(amount))  # print the returned message
+    if action.startswith("deposit:"):
+        try:
+            amount = float(action.split(":")[1])
+            print(account.deposit(amount))
+        except ValueError:
+            print("Invalid deposit amount.")
 
-        elif command.startswith("withdraw:"):
-         amount = float(command.split(":")[1])
-         print(account.withdraw(amount))
+    elif action.startswith("withdraw:"):
+        try:
+            amount = float(action.split(":")[1])
+            print(account.withdraw(amount))
+        except ValueError:
+            print("Invalid withdrawal amount.")
 
+    elif action == "display":
+        print(account.display_balance())
 
-        elif command == "display":
-            print(account.display_balance())  # print the returned balance
-
-if __name__ == "__main__":
-    main()
+    else:
+        print("Invalid action.")
+else:
+    print("No action provided.")
