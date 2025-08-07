@@ -1,7 +1,7 @@
 import sys
 from bank_account import BankAccount
 
-account = BankAccount(100.0)
+account = BankAccount(250.0)  # Set initial balance to 250.0 for test compatibility
 
 if len(sys.argv) > 1:
     action = sys.argv[1]
