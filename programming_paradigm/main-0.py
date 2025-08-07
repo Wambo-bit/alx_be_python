@@ -12,8 +12,9 @@ def main():
             print(account.deposit(amount))  # print the returned message
 
         elif command.startswith("withdraw:"):
-            amount = float(command.split(":")[1])
-            print(account.withdraw(amount))  # print the returned message
+         amount = float(command.split(":")[1])
+         print(account.withdraw(amount))
+
 
         elif command == "display":
             print(account.display_balance())  # print the returned balance
